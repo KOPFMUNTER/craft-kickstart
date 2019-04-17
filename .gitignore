@@ -3,7 +3,7 @@
 
 # CRAFT STORAGE
 /storage/*
-!/storage/.gitkeep
+!/storage/.gitignore
 
 /web/cpresources/*
 

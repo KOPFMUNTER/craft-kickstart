@@ -2,21 +2,21 @@
     "name": "kopfmunter/craft-kickstart",
     "description": "Craft CMS Scaffolding Project",
     "keywords": [
-      "craft",
-      "cms",
-      "craftcms",
-      "project"
+        "craft",
+        "cms",
+        "craftcms",
+        "project"
     ],
     "license": "Unlicense",
     "homepage": "https://kopfmunter.de",
     "type": "project",
     "support": {
-      "email": "support@craftcms.com",
-      "issues": "https://github.com/craftcms/cms/issues",
-      "forum": "https://craftcms.stackexchange.com/",
-      "source": "https://github.com/craftcms/cms",
-      "docs": "https://craftcms.com/docs",
-      "rss": "https://craftcms.com/changelog.rss"
+        "email": "support@craftcms.com",
+        "issues": "https://github.com/craftcms/cms/issues",
+        "forum": "https://craftcms.stackexchange.com/",
+        "source": "https://github.com/craftcms/cms",
+        "docs": "https://craftcms.com/docs",
+        "rss": "https://craftcms.com/changelog.rss"
 },
   "require": {
     "craftcms/cms": "^3.0.0",
