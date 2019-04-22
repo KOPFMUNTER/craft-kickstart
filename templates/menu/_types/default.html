@@ -1,0 +1,25 @@
+{% extends "_layout" %} 
+{% set title = entry.title %}
+{% block content %}
+{% include 'partials/header' %}
+
+
+<section class="container mx-auto pb-16">
+
+    <h1 class="lg:w-5/6 font-standard font-thin lg:text-6xl lg:mb-16 lg:mt-16 leading-normal">
+        {{ entry.title }}
+    </h1>
+
+
+    <div class="py-20">
+    
+        {{ entry.text }}
+    
+    
+    </div>
+
+
+</section>
+
+
+{% endblock %}

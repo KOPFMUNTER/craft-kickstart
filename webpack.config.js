@@ -14,7 +14,7 @@ module.exports = {
     ]},
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].[hash].js'
   },
   module: {
     rules: [
@@ -78,7 +78,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].[hash].css',
     }),
     new PurgecssPlugin({
         paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true })

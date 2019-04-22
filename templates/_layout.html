@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ craft.app.language |slice(0,2) }}">
+
+<head>
+
+    <link rel="dns-prefetch" href="{{ baseUrl }}">
+    <link rel="preconnect" href="{{ baseUrl }}" crossorigin>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+ 
+    <link rel="stylesheet" href="{{ baseUrl }}dist/css/site.combined.min.{{staticAssetsVersion}}.css">
+
+</head>
+
+<body class="{% if (entry is defined) %}level-{{ entry.level }} entry-{{ entry.id }}{% endif %} {% if (bodyclass is defined) %} {{ bodyclass }} {% endif %}">
+
+
+      <div class="container mx-auto">
+
+        {% block content %}
+        {% endblock %}
+
+        </div> <!-- container -->
+
+
+</body>
+
+</html>

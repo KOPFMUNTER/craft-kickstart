@@ -16,10 +16,10 @@ use mikehaertl\shellcommand\Command as ShellCommand;
 const INSTALL_PLUGINS = [
     'seomatic',
     'cp-field-inspect',
-    'craft-cpcss',
-    'craft-dashboard-begone',
+    'cp-css',
+    'dashboard-begone',
     'knock-knock',
-    'craft3-freeform',
+    'freeform',
     'redactor'
 ];
 
