@@ -19,10 +19,16 @@
         "rss": "https://craftcms.com/changelog.rss"
 },
   "require": {
-    "craftcms/cms": "^3.0.0",
-    "vlucas/phpdotenv": "^2.4.0",
-    "nystudio107/craft-seomatic": "^3.0.0"
-  },
+        "craftcms/cms": "^3.0.0",
+        "craftcms/redactor": "^2.3",
+        "doublesecretagency/craft-cpcss": "^2.1",
+        "mmikkel/cp-field-inspect": "^1.0",
+        "nystudio107/craft-seomatic": "^3.0.0",
+        "putyourlightson/craft-dashboard-begone": "^1.0",
+        "solspace/craft3-freeform": "^2.5",
+        "verbb/knock-knock": "^1.0",
+        "vlucas/phpdotenv": "^2.4.0"
+    },
   "autoload": {
     "psr-4": {
       "modules\\": "modules/"

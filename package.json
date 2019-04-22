@@ -1,0 +1,57 @@
+{
+  "name": "craft-kickstart",
+  "version": "1.0.0",
+  "description": "A new Craft CMS Website created by KOPFMUNTER",
+  "main": "app.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KOPFMUNTER/craft-kickstart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KOPFMUNTER/craft-kickstart/issues"
+  },
+  "homepage": "https://github.com/KOPFMUNTER/craft-kickstart#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "autoprefixer": "^9.5.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "glob": "^7.1.3",
+    "imagemin": "^6.1.0",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^7.0.0",
+    "imagemin-svgo": "^7.0.0",
+    "imagemin-webp": "^5.0.0",
+    "img-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "postcss": "^7.0.14",
+    "postcss-clean": "^1.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "precss": "^4.0.0",
+    "purgecss-webpack-plugin": "^1.4.0",
+    "style-loader": "^0.23.1",
+    "tailwindcss": "^0.7.4",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-notifier": "^1.7.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "IE 10"
+  ]
+}

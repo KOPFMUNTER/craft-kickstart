@@ -1,0 +1,33 @@
+/* @import "tailwindcss/preflight";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities"; 
+
+ */
+
+$blue: '#000';
+
+body {
+    background: $blue;
+    box-shadow: 0 0 3px red;
+    transition: all .5s;
+    .btn {
+        color: blue;
+    }
+
+    @media screen and (max-width: 500px){
+        .btn {
+            background: url('../img/ss.png');
+        }
+    }
+}
+
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+  @screen sm {
+      @apply py-4 rounded;
+  }
+}
+
