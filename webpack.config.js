@@ -5,6 +5,9 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const PATHS = {
    src: path.join(__dirname, 'templates')
@@ -16,7 +19,7 @@ module.exports = {
     ]},
   output: {
     path: path.resolve(__dirname, 'web/dist'),
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
   },
   module: {
     rules: [
@@ -38,7 +41,7 @@ module.exports = {
           ]
       },
       {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/,
         loaders: [
             {
                 loader: 'url-loader',
@@ -51,26 +54,21 @@ module.exports = {
                 loader: 'img-loader',
                 options: {
                     plugins: [
-                      require('imagemin-gifsicle')({
-                        interlaced: false
-                      }),
-                      require('imagemin-mozjpeg')({
-                        progressive: true,
-                        arithmetic: false
-                      }),
-                      require('imagemin-webp')({
-                        quality: 75
-                      }),
-                      require('imagemin-pngquant')({
-                        floyd: 0.5,
-                        speed: 2
-                      }),
-                      require('imagemin-svgo')({
-                        plugins: [
-                          { removeTitle: true },
-                          { convertPathData: false }
-                        ]
-                      })
+                        require('imagemin-gifsicle')({
+                            interlaced: true,
+                        }),
+                        require('imagemin-mozjpeg')({
+                            progressive: true,
+                            arithmetic: false,
+                        }),
+                        require('imagemin-optipng')({
+                            optimizationLevel: 5,
+                        }),
+                        require('imagemin-svgo')({
+                            plugins: [
+                                {convertPathData: false},
+                            ]
+                        }),
                     ]
                 }
             }
@@ -85,14 +83,28 @@ module.exports = {
     new PurgecssPlugin({
         paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true })
     }),
+    new BrowserSyncPlugin({
+        proxy: 'https://test1.loc/',
+        https: true,
+        files: ['dist/', 'templates/**/*']
+    }),
     new ManifestPlugin(),
+    new CleanWebpackPlugin({
+        verbose: true
+    }),
+    new CopyWebpackPlugin([{
+        from: 'img/**/**',
+        to: path.resolve(__dirname, 'web/dist/'),
+        context: 'src/',
+    }]),
+    new ImageminPlugin(
+        {
+            pngquant: ({
+                quality: '80-95'
+            })
+        }
+    ),
     new WebpackNotifierPlugin({alwaysNotify: true}),
-  ]
+  ],
+  watch: true
 };
-
-/*
-
-TODO:
-- Long-Term-Caching
-
-*/
