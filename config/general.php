@@ -32,7 +32,6 @@ return [
     'dev' => [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
-        'useProjectConfigFile' => true,
     ],
 
     // Staging environment settings

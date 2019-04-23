@@ -20,7 +20,8 @@ const INSTALL_PLUGINS = [
     'dashboard-begone',
     'knock-knock',
     'freeform',
-    'redactor'
+    'redactor',
+    'twigpack'
 ];
 
 
