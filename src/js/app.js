@@ -2,8 +2,6 @@ import "../css/app.css";
 
 class Form {
     constructor() {
-        console.log('Hello world');
+        console.log('asdas');
     }
-}
-
-new Form();
+} 

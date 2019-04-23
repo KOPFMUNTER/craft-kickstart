@@ -27,7 +27,7 @@ body {
 .btn {
   @apply font-bold py-2 px-4 rounded;
   @screen sm {
-      @apply py-4 rounded;
+      @apply py-4 rounded no-underline;
   }
 }
 

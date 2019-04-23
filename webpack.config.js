@@ -3,6 +3,8 @@ const glob = require('glob');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const PATHS = {
    src: path.join(__dirname, 'templates')
@@ -13,8 +15,8 @@ module.exports = {
       './src/js/app.js',
     ]},
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].js'
+    path: path.resolve(__dirname, 'web/dist'),
+    filename: '[name].[contenthash].js'
   },
   module: {
     rules: [
@@ -42,7 +44,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: 'img/[name].[hash].[ext]'
+                    name: 'img/[name].[ext]'
                 }
             },
             {
@@ -78,11 +80,12 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
+      filename: '[name].[contenthash].css',
     }),
     new PurgecssPlugin({
         paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true })
     }),
+    new ManifestPlugin(),
     new WebpackNotifierPlugin({alwaysNotify: true}),
   ]
 };
