@@ -1,10 +1,9 @@
-/* @import "tailwindcss/preflight";
+@import "tailwindcss/preflight";
 
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities"; 
 
- */
 
 $blue: '#000';
 
