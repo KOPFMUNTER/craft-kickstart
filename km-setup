@@ -21,7 +21,8 @@ const INSTALL_PLUGINS = [
     'knock-knock',
     'freeform',
     'redactor',
-    'twigpack'
+    'twigpack',
+    'architect'
 ];
 
 

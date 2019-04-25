@@ -1,0 +1,61 @@
+{
+    "siteGroups": [
+        "Hauptseite"
+    ],
+    "sites": [
+        {
+            "group": "Hauptseite",
+            "name": "Hauptseite",
+            "handle": "default",
+            "language": "de-DE",
+            "primary": "1",
+            "hasUrls": true,
+            "baseUrl": "$DEFAULT_SITE_URL"
+        }
+    ],
+    "fieldGroups": [
+        "Common"
+    ],
+    "sections": [
+        {
+            "name": "Seiten",
+            "handle": "menu",
+            "type": "structure",
+            "enableVersioning": true,
+            "maxLevels": null,
+            "siteSettings": [
+                {
+                    "hasUrls": true,
+                    "uriFormat": "{slug}",
+                    "template": "menu\/_entry",
+                    "enabledByDefault": true
+                }
+            ]
+        }
+    ],
+    "fields": [
+        {
+            "group": "Common",
+            "name": "Von Navigation ausschlie\u00dfen",
+            "handle": "excludeFromNav",
+            "instructions": "",
+            "type": "craft\\fields\\Lightswitch",
+            "default": ""
+        }
+    ],
+    "entryTypes": [
+        {
+            "sectionHandle": "menu",
+            "name": "Standardseite",
+            "handle": "default",
+            "hasTitleField": true,
+            "titleLabel": "Titel",
+            "titleFormat": "",
+            "fieldLayout": {
+                "Common": [
+                    "excludeFromNav"
+                ]
+            }
+        }
+    ]
+}
