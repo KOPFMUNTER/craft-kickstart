@@ -56,6 +56,15 @@
                     "excludeFromNav"
                 ]
             }
+        },
+        {
+            "sectionHandle": "menu",
+            "name": "Startseite",
+            "handle": "startseite",
+            "hasTitleField": true,
+            "titleLabel": "Title",
+            "titleFormat": "",
+            "fieldLayout": []
         }
     ]
 }
