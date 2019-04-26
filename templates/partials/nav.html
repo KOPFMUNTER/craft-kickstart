@@ -1,4 +1,4 @@
-<ul class="clearfix list-reset flex flex-1">
+<ul class="clearfix list-reset flex flex-col flex-1">
     {% nav entry in menu %}
     
     <li{% if entry.slug == craft.app.request.getSegment(entry.level) %} class="active"{% endif %}>

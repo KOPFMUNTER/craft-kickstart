@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const glob = require('glob');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -11,6 +12,17 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const PATHS = {
    src: path.join(__dirname, 'templates')
+}
+
+/**
+ * Custom PurgeCSS Extractor
+ * https://github.com/FullHuman/purgecss
+ * https://github.com/FullHuman/purgecss-webpack-plugin
+ */
+class TailwindExtractor {
+    static extract(content) {
+      return content.match(/[A-z0-9-:\/]+/g);
+    }
 }
 
 module.exports = {
@@ -73,28 +85,37 @@ module.exports = {
                 }
             }
         ]
-      },
+      }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin({
+        verbose: true
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
     new PurgecssPlugin({
-        paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true })
+        paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+        whitelist: ['open','is-active'],
+        whitelistPatterns: [/(slick)[a-zA-Z-]*/],
+        whitelistPatternsChildren: [/(slick)[a-zA-Z-]*/],
+        extractors: [
+            {
+                extractor: TailwindExtractor,
+                extensions: ["html", "js", "php", "vue"]
+            }
+        ]
     }),
     new BrowserSyncPlugin({
-        proxy: 'https://test1.loc/',
+        proxy: process.env.DEFAULT_SITE_URL,
         https: true,
         files: ['dist/', 'templates/**/*']
     }),
     new ManifestPlugin(),
-    new CleanWebpackPlugin({
-        verbose: true
-    }),
     new CopyWebpackPlugin([{
-        from: 'img/**/**',
-        to: path.resolve(__dirname, 'web/dist/'),
+        from: 'img/**/*',
+        to: path.resolve(__dirname, 'web/dist'),
         context: 'src/',
     }]),
     new ImageminPlugin(
@@ -105,6 +126,5 @@ module.exports = {
         }
     ),
     new WebpackNotifierPlugin({alwaysNotify: true}),
-  ],
-  watch: true
+  ]
 };

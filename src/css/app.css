@@ -1,32 +1,76 @@
 @import "tailwindcss/preflight";
 
-@import "tailwindcss/components";
 
+@import "components/buttons.css";
+@import "components/hamburger.css";
+
+
+@import "tailwindcss/components";
 @import "tailwindcss/utilities"; 
 
+@import "slick-carousel/slick/slick.css";
+@import "magnific-popup/dist/magnific-popup.css";
 
-$blue: '#000';
 
-body {
-    background: $blue;
-    box-shadow: 0 0 3px red;
-    transition: all .5s;
-    .btn {
-        color: blue;
+
+
+
+.transition-1 {
+    transition: all 0.1s linear;
+}
+.transition-2 {
+    transition: all 0.2s linear;
+}
+
+.mobile-nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 121px;
+    right: -250px;
+    background: #fff;
+    padding: 40px 40px 40px 0px;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+    @media screen and (min-width:600px) {
+       display: none;
     }
-
-    @media screen and (max-width: 500px){
-        .btn {
-            background: url('../img/ss.png');
+    &.open {
+        right: 0;
+        box-shadow: 0 40px 90px rgba(0,0,0,0.3);
+    }
+    ul {
+        list-style: none;
+    }
+    li {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        &.active {
+            > a {
+                color: #4c6fb5;
+            }
+        }
+        ul {
+            margin-top: 10px;
+        }
+        li {
+            margin-bottom: 10px;
+            padding-bottom: 0;
+            border-bottom: 0;
+            
+            a {
+                margin-left: 5px;
+            }
         }
     }
+    a {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
 }
 
 
-.btn {
-  @apply font-bold py-2 px-4 rounded;
-  @screen sm {
-      @apply py-4 rounded no-underline;
-  }
-}
+
 
