@@ -98,8 +98,8 @@ module.exports = {
     new PurgecssPlugin({
         paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
         whitelist: ['open','is-active'],
-        whitelistPatterns: [/(slick)[a-zA-Z-]*/],
-        whitelistPatternsChildren: [/(slick)[a-zA-Z-]*/],
+        whitelistPatterns: [/(slick)[a-zA-Z-]*/,/(mfp)[a-zA-Z-]*/],
+        whitelistPatternsChildren: [/(slick)[a-zA-Z-]*/,/(mfp)[a-zA-Z-]*/],
         extractors: [
             {
                 extractor: TailwindExtractor,
