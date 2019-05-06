@@ -4,10 +4,8 @@
   "description": "A new Craft CMS Website created by KOPFMUNTER",
   "main": "app.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
-    "start:dev": "webpack-dev-server"
+    "dev": "webpack --mode development --config webpack.dev.js",
+    "build": "webpack --mode production --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -55,6 +53,7 @@
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1",
     "webpack-manifest-plugin": "^2.0.4",
+    "webpack-merge": "^4.2.1",
     "webpack-notifier": "^1.7.0"
   },
   "browserslist": [
@@ -63,6 +62,7 @@
     "IE 10"
   ],
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "browser-sync": "^2.26.4",
     "imagemin-optipng": "^6.0.0",
     "jquery": "^3.4.0",

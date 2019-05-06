@@ -3,7 +3,11 @@ import "../css/app.css";
 import $ from 'jquery';
 import 'magnific-popup';
 import 'slick-carousel';
+import AOS from 'aos';
 
+window.jQuery = $;
+
+AOS.init();
 
 $('.slider').slick();
 
