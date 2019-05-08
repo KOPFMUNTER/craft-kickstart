@@ -10,6 +10,5 @@ module.exports = merge(common,{
         https: true,
         files: ['dist/', 'templates/**/*']
     })
-  ],
-  watch: true
+  ]
 });
