@@ -12,14 +12,28 @@
 
 <body class="{% if (entry is defined) %}level-{{ entry.level }} entry-{{ entry.id }}{% endif %} {% if (bodyclass is defined) %} {{ bodyclass }} {% endif %} antialiased">
 
+    {% set menu = craft.entries.section('menu').slug('not startseite').level('<=2').excludeFromNav('not 1').all() %}
 
-      <div class="wrapper">
+      <div class="wrapper px-8 md:px-0 transition-2">
 
     {% block content %}
     {% endblock %}
 
 
-        </div> <!-- wrapper -->
+    </div> <!-- wrapper -->
+
+    <nav class="nav md:hidden">
+        <button class="hamburger hamburger--squeeze" type="button">
+            <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </nav>
+    <div class="mobile-nav md:hidden">
+
+        {% include 'partials/nav' %}
+        
+    </div>
 
 
     {{ craft.twigpack.includeJsModule("main.js") }}

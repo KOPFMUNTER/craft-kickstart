@@ -1,23 +1,9 @@
-{% set menu = craft.entries.section('menu').slug('not startseite').level('<=2').excludeFromNav('not 1').all() %}
-
-
-<div class="header-wrapper bg-white p-12">
-    <header class="header container mx-auto flex flex-col pb-8 justify-between items-center border-b text-center lg:px-20">
-        <a href="/" class="lg:w-2/3 md:w-1/4 lg:w-auto"><img src="{{ url('img/logo.svg') }}" alt="{{siteName}}"></a>
+<div class="header-wrapper bg-white pt-12">
+    <header class="header container mx-auto flex flex-col md:flex-row pb-8 justify-between items-center">
+        <a href="/" class="w-48"><img src="{{ url('img/logo.jpg') }}" alt="{{siteName}}"></a>
         <nav class="main-nav hidden md:block">
             {% include "partials/nav" %}
         </nav>
-        <nav class="nav md:hidden">
-            <button class="hamburger hamburger--squeeze" type="button">
-                <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-                </span>
-            </button>
-        </nav>
-        <div class="mobile-nav md:hidden">
-    
-            {% include 'partials/nav' %}
-            
-        </div>
+        
     </header>
 </div>

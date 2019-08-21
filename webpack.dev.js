@@ -7,7 +7,10 @@ module.exports = merge(common,{
   plugins: [
     new BrowserSyncPlugin({
         proxy: process.env.DEFAULT_SITE_URL,
-        https: true,
+        https: {
+            key: "/etc/ssl/localhost/localhost.key",
+            cert: "/etc/ssl/localhost/localhost.crt" 
+        },
         files: ['dist/', 'templates/**/*']
     })
   ]
