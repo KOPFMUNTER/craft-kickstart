@@ -1,0 +1,23 @@
+        {% macro urlFromId(entryId) %}
+            {%- set entry = craft.entries.id(entryId).one() %}
+            {{- entry ? entry.url -}}
+        {% endmacro %}
+
+        {% macro titleFromId(entryId) %}
+            {%- set entry = craft.entries.id(entryId).one() %}
+            {{- entry ? entry.title -}}
+        {% endmacro %}
+
+        {% macro getDescendantsFromId(entryId) %}
+            {% set menu = craft.entries.section('menu').id(entryId) %}
+            {% nav entry in menu %}
+                {% set descendants = entry.descendants() %}
+                <ul class="no-bullet">
+                    {% for child in descendants %}
+                        <li>
+                            <a href="{{ child.url }}">{{ child.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endnav %}
+        {% endmacro %}

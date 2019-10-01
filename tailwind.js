@@ -178,31 +178,17 @@ module.exports = {
     |
     */
   
-    textSizes: {
-        'xxs': '.625rem',   // 10px
-        'xs': '.75rem',     // 12px
-        'sm': '.875rem',    // 14px
-        'base': '1rem',     // 16px
-        'md': '1.125rem',   // 18px
-        'lg': '1.25rem',    // 20px
-        'xl': '1.375rem',   // 22px
-        '2xl': '1.5rem',    // 24px
-        '3xl': '1.625rem',  // 26px
-        '4xl': '1.75rem',   // 28px
-        '5xl': '1.875rem',  // 30px
-        '6xl': '2rem',      // 32px
-        '7xl': '2.125rem',  // 34px
-        '8xl': '2.25rem',   // 36px
-        '9xl': '2.375rem',  // 38px
-        '10xl': '2.5rem',   // 40px
-        '11xl': '2.625rem', // 42px
-        '12xl': '2.75rem',  // 44px
-        '13xl': '2.875rem', // 46px
-        '14xl': '3rem',     // 48px
-        '15xl': '3.125rem', // 50px
-        '16xl': '3.25rem',  // 52px
-        '17xl': '3.375rem', // 54px
-    },
+   textSizes: {
+    '10': '.625rem',     // 10px
+    '12': '.75rem',     // 12px
+    '14': '.875rem',    // 14px
+    'base': '1rem',     // 16px
+    '18': '1.125rem',    // 18px
+    '22': '1.375rem',    // 22px
+    '26': '1.625rem',  // 26px
+    '35': '2.1875rem',  // 35px
+    '55': '3.4375rem',  // 55px
+  },
   
   
     /*

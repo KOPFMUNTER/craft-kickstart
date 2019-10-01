@@ -26,6 +26,10 @@ return [
         // Whether to save the project config out to config/project.yaml
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => false,
+        'aliases' => [
+            '@basePath' => getenv('BASE_PATH'),
+            '@uploadPath' => getenv('UPLOAD_PATH'),
+        ],
     ],
 
     // Dev environment settings

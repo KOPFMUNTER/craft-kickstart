@@ -12,6 +12,18 @@
 
 <body class="{% if (entry is defined) %}level-{{ entry.level }} entry-{{ entry.id }}{% endif %} {% if (bodyclass is defined) %} {{ bodyclass }} {% endif %} antialiased">
 
+    {% import 'partials/macros' as macros %}
+
+   {% if craft.app.config.general.devMode %}
+    <div class="bg-white fixed pin-t pin-l p-2 text-green">
+        <div class="sm:hidden">XS</div>
+        <div class="hidden sm:block md:hidden">SM</div>
+        <div class="hidden md:block lg:hidden">MD</div>
+        <div class="hidden lg:block xl:hidden">LG</div>
+        <div class="hidden xl:block">XL</div>
+    </div>
+    {% endif %}
+
     {% set menu = craft.entries.section('menu').slug('not startseite').level('<=2').excludeFromNav('not 1').all() %}
 
       <div class="wrapper px-8 md:px-0 transition-2">

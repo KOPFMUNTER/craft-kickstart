@@ -6,7 +6,6 @@
 !/storage/.gitignore
 
 /web/cpresources/*
-/web/dist/*
 
 # BUILD FILES
 /bower_components/*

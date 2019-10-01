@@ -38,7 +38,7 @@ return [
         // Public server config
         'server' => [
             'manifestPath' => '@webroot/dist/',
-            'publicPath' => '/dist',
+            'publicPath' => '@web/dist',
         ],
         // webpack-dev-server config
         'devServer' => [
