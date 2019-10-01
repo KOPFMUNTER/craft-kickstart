@@ -56,5 +56,7 @@
     "post-install-cmd": [
         "@php craft clear-caches/all"
     ]
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
