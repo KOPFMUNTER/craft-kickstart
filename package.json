@@ -67,7 +67,7 @@
     "aos": "^3.0.0-beta.6",
     "browser-sync": "^2.26.4",
     "imagemin-optipng": "^6.0.0",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "magnific-popup": "^1.1.0",
     "slick-carousel": "^1.8.1"
   }
