@@ -19,7 +19,7 @@
         "rss": "https://craftcms.com/changelog.rss"
 },
   "require": {
-        "craftcms/cms": "^3.3",
+        "craftcms/cms": "^3.4",
         "craftcms/redactor": "^2.3",
         "doublesecretagency/craft-cpcss": "^2.1",
         "mmikkel/cp-field-inspect": "^1.0",
